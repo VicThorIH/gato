@@ -5,8 +5,11 @@ public class Gato {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String[][] matriz = { { "1", "|", "2", "|", "3" }, { "-", "-", "-", "-", "-" }, { "4", "|", "5", "|", "6" },
-				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
+		String[][] matriz = {{ "1", "|", "2", "|", "3" }, 
+							{ "-", "-", "-", "-", "-" }, 
+							{ "4", "|", "5", "|", "6" },
+							{ "-", "-", "-", "-", "-" }, 
+							{ "7", "|", "8", "|", "9" }};
 
 		String turno = "J1";
 		boolean juego = true;
