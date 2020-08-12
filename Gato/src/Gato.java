@@ -26,20 +26,42 @@ public class Gato {
 		Imprimir_Gato(matriz); */
 
 		/* aqui empieso yo mija*/
-		while(juego) {
+		while(juego == true) {
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
 			int numero = leer.nextInt();
 			turno = Reemplazar_Gato(numero, matriz, turno);
-			
+			juego = ganador(juego, matriz);
 		}
-		
+		System.out.println("Muy bien ya ganaste simon sobres zas");
+		Imprimir_Gato(matriz);
 		
 		
 		
 		
 	}
 
+	public static boolean ganador(boolean flag, String[][] matriz){
+		if(matriz[0][0] == matriz[0][2] & matriz[0][0]==matriz[0][4]) {
+			flag = false;
+		}else if(matriz[2][0] == matriz[2][2] & matriz[2][0]==matriz[2][4]){
+			flag = false;
+		}else if(matriz[4][0] == matriz[4][2] & matriz[4][0]==matriz[4][4]){
+			flag = false;
+		}else if(matriz[0][0] == matriz[2][0] & matriz[0][0]==matriz[4][0]){
+			flag = false;
+		}else if(matriz[0][2] == matriz[2][2] & matriz[0][2]==matriz[4][2]){
+			flag = false;
+		}else if(matriz[0][4] == matriz[2][4] & matriz[0][4]==matriz[4][4]){
+			flag = false;
+		}else if(matriz[0][0] == matriz[2][2] & matriz[0][0]==matriz[4][4]){
+			flag = false;
+		}else if(matriz[0][4] == matriz[2][2] & matriz[0][4]==matriz[4][0]){
+			flag = false;
+		}
+		return flag;
+	}
+	
 	public static String Reemplazar_Gato(int n, String[][] m, String t) {
 
 		switch (n) {
