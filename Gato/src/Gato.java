@@ -3,6 +3,8 @@ public class Gato {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+=======
 		String[][] matriz = { { "1", "|", "2", "|", "3" }, { "-", "-", "-", "-", "-" }, { "4", "|", "5", "|", "6" },
 				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
 
@@ -196,6 +198,7 @@ public class Gato {
 		System.out.println();
 		System.out.println();
 		System.out.println("Prueba de commit");
+>>>>>>> 8269bd7ee2a2831b52665065df9fac9e798d5b0d
 	}
 
 }
