@@ -11,9 +11,6 @@ public class Gato {
 		String turno = "J1";
 		boolean juego = true;
 		Scanner leer = new Scanner(System.in);
-		int contlleno = 0;
-		boolean isfull = false;
-
 		/*
 		 * Imprimir_Gato(matriz); turno = Reemplazar_Gato(9, matriz, turno);
 		 * Imprimir_Gato(matriz);
@@ -24,20 +21,16 @@ public class Gato {
 		 */
 
 		/* aqui empieso yo mija */
-		while (juego == true && isfull == false) {
+		while (juego == true && checkfull(matriz) == false) {
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
 			int numero = leer.nextInt();
 			turno = Reemplazar_Gato(numero, matriz, turno);
 			juego = ganador(juego, matriz);
-			contlleno++;
-			if (contlleno == 9) {
-				isfull = true;
-			}
 		}
 		if (juego == false) {
 			System.out.println("Muy bien ya ganaste simon sobres zas eres bueno noo");
-		} else if (juego == true && isfull == true) {
+		} else if (juego == true && checkfull(matriz) == true) {
 			System.out.println("Mira pues... nadie gano que malos son");
 		}
 
@@ -216,6 +209,16 @@ public class Gato {
 			System.out.println("Escoje un n�mero v�lido");
 			return t;
 
+		}
+	}
+
+	public static boolean checkfull(String[][] matriz) {
+		if (matriz[0][0] != "1" && matriz[0][2] != "2" && matriz[0][4] != "3" && matriz[2][0] != "4"
+				&& matriz[2][2] != "5" && matriz[2][4] != "6" && matriz[4][0] != "7" && matriz[4][2] != "8"
+				&& matriz[4][4] != "9") {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
