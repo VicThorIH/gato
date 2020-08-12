@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Gato {
 
@@ -10,22 +11,24 @@ public class Gato {
 
 		String turno = "J1";
 		boolean juego = true;
+		Scanner leer = new Scanner(System.in);
 
-		Imprimir_Gato(matriz);
+		/*Imprimir_Gato(matriz);
 		turno = Reemplazar_Gato(9, matriz, turno);
 		Imprimir_Gato(matriz);
-		
+
 		turno = Reemplazar_Gato(9, matriz, turno);
 		Imprimir_Gato(matriz);
-		
+
 		turno = Reemplazar_Gato(7, matriz, turno);
-		Imprimir_Gato(matriz);
-		
+		Imprimir_Gato(matriz); */
+
 		/* aqui empieso yo mija*/
 		while(juego) {
 			System.out.println("Bienvenido elige un numero:");
 			Imprimir_Gato(matriz);
-			
+			int numero = leer.nextInt();
+			turno = Reemplazar_Gato(9, matriz, turno);
 			
 		}
 		
@@ -197,7 +200,7 @@ public class Gato {
 		}
 		System.out.println();
 		System.out.println();
-		System.out.println("Prueba de commit");
+		System.out.println();
 
 	}
 
