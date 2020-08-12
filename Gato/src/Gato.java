@@ -11,16 +11,7 @@ public class Gato {
 		String turno = "J1";
 		boolean juego = true;
 		Scanner leer = new Scanner(System.in);
-		/*
-		 * Imprimir_Gato(matriz); turno = Reemplazar_Gato(9, matriz, turno);
-		 * Imprimir_Gato(matriz);
-		 * 
-		 * turno = Reemplazar_Gato(9, matriz, turno); Imprimir_Gato(matriz);
-		 * 
-		 * turno = Reemplazar_Gato(7, matriz, turno); Imprimir_Gato(matriz);
-		 */
-
-		/* aqui empieso yo mija */
+		
 		while (juego == true && checkfull(matriz) == false) {
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
