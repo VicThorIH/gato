@@ -27,7 +27,7 @@ public class Gato {
 
 		/* aqui empieso yo mija*/
 		while(juego) {
-			System.out.println("Es tu turno" + turno + "lige un numero:");
+			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
 			int numero = leer.nextInt();
 			turno = Reemplazar_Gato(numero, matriz, turno);
