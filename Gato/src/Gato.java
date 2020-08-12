@@ -4,64 +4,68 @@ public class Gato {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		String[][] matriz = {{ "1", "|", "2", "|", "3" }, 
-							{ "-", "-", "-", "-", "-" }, 
-							{ "4", "|", "5", "|", "6" },
-							{ "-", "-", "-", "-", "-" }, 
-							{ "7", "|", "8", "|", "9" }};
+
+		String[][] matriz = { { "1", "|", "2", "|", "3" }, { "-", "-", "-", "-", "-" }, { "4", "|", "5", "|", "6" },
+				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
 
 		String turno = "J1";
 		boolean juego = true;
 		Scanner leer = new Scanner(System.in);
+		int contlleno = 0;
+		boolean isfull = false;
 
-		/*Imprimir_Gato(matriz);
-		turno = Reemplazar_Gato(9, matriz, turno);
-		Imprimir_Gato(matriz);
+		/*
+		 * Imprimir_Gato(matriz); turno = Reemplazar_Gato(9, matriz, turno);
+		 * Imprimir_Gato(matriz);
+		 * 
+		 * turno = Reemplazar_Gato(9, matriz, turno); Imprimir_Gato(matriz);
+		 * 
+		 * turno = Reemplazar_Gato(7, matriz, turno); Imprimir_Gato(matriz);
+		 */
 
-		turno = Reemplazar_Gato(9, matriz, turno);
-		Imprimir_Gato(matriz);
-
-		turno = Reemplazar_Gato(7, matriz, turno);
-		Imprimir_Gato(matriz); */
-
-		/* aqui empieso yo mija*/
-		while(juego == true) {
+		/* aqui empieso yo mija */
+		while (juego == true && isfull == false) {
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
 			int numero = leer.nextInt();
 			turno = Reemplazar_Gato(numero, matriz, turno);
 			juego = ganador(juego, matriz);
+			contlleno++;
+			if (contlleno == 9) {
+				isfull = true;
+			}
 		}
-		System.out.println("Muy bien ya ganaste simon sobres zas");
+		if (juego == false) {
+			System.out.println("Muy bien ya ganaste simon sobres zas eres bueno noo");
+		} else if (juego == true && isfull == true) {
+			System.out.println("Mira pues... nadie gano que malos son");
+		}
+
 		Imprimir_Gato(matriz);
-		
-		
-		
-		
+
 	}
 
-	public static boolean ganador(boolean flag, String[][] matriz){
-		if(matriz[0][0] == matriz[0][2] & matriz[0][0]==matriz[0][4]) {
+	public static boolean ganador(boolean flag, String[][] matriz) {
+		if (matriz[0][0] == matriz[0][2] & matriz[0][0] == matriz[0][4]) {
 			flag = false;
-		}else if(matriz[2][0] == matriz[2][2] & matriz[2][0]==matriz[2][4]){
+		} else if (matriz[2][0] == matriz[2][2] & matriz[2][0] == matriz[2][4]) {
 			flag = false;
-		}else if(matriz[4][0] == matriz[4][2] & matriz[4][0]==matriz[4][4]){
+		} else if (matriz[4][0] == matriz[4][2] & matriz[4][0] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][0] == matriz[2][0] & matriz[0][0]==matriz[4][0]){
+		} else if (matriz[0][0] == matriz[2][0] & matriz[0][0] == matriz[4][0]) {
 			flag = false;
-		}else if(matriz[0][2] == matriz[2][2] & matriz[0][2]==matriz[4][2]){
+		} else if (matriz[0][2] == matriz[2][2] & matriz[0][2] == matriz[4][2]) {
 			flag = false;
-		}else if(matriz[0][4] == matriz[2][4] & matriz[0][4]==matriz[4][4]){
+		} else if (matriz[0][4] == matriz[2][4] & matriz[0][4] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][0] == matriz[2][2] & matriz[0][0]==matriz[4][4]){
+		} else if (matriz[0][0] == matriz[2][2] & matriz[0][0] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][4] == matriz[2][2] & matriz[0][4]==matriz[4][0]){
+		} else if (matriz[0][4] == matriz[2][2] & matriz[0][4] == matriz[4][0]) {
 			flag = false;
 		}
 		return flag;
 	}
-	
+
 	public static String Reemplazar_Gato(int n, String[][] m, String t) {
 
 		switch (n) {
