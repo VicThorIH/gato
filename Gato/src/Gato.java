@@ -7,6 +7,7 @@ public class Gato {
 				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
 
 		String turno = "J1";
+		boolean juego = true;
 
 		Imprimir_Gato(matriz);
 		turno = Reemplazar_Gato(9, matriz, turno);
@@ -18,7 +19,13 @@ public class Gato {
 		turno = Reemplazar_Gato(7, matriz, turno);
 		Imprimir_Gato(matriz);
 		
-		
+		/* aqui empieso yo mija*/
+		while(juego) {
+			System.out.println("Bienvenido elige un numero:");
+			Imprimir_Gato(matriz);
+			
+			
+		}
 		
 		
 		
