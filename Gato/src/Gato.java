@@ -15,10 +15,15 @@ public class Gato {
 		Imprimir_Gato(matriz);
 		turno = Reemplazar_Gato(9, matriz, turno);
 		Imprimir_Gato(matriz);
+		
+		turno = Reemplazar_Gato(9, matriz, turno);
+		Imprimir_Gato(matriz);
+		
 		turno = Reemplazar_Gato(7, matriz, turno);
 		Imprimir_Gato(matriz);
-		turno = Reemplazar_Gato(5, matriz, turno);
-		Imprimir_Gato(matriz);
+		
+		
+		
 		
 		
 		
