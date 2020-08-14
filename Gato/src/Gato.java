@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Gato {
 
@@ -13,14 +13,33 @@ public class Gato {
 		Scanner leer = new Scanner(System.in);
 		
 		while (juego == true && checkfull(matriz) == false) {
+			
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
-			int numero = leer.nextInt();
-			turno = Reemplazar_Gato(numero, matriz, turno);
+			if (turno == "J2") {
+				Random pcRand = new Random();
+				int x = pcRand.nextInt(10) + 1;
+				turno = Reemplazar_Gato(x, matriz, turno);
+			}else {
+				
+				int numero = leer.nextInt();
+				turno = Reemplazar_Gato(numero, matriz, turno);
+				
+			}
+			
+			
 			juego = ganador(juego, matriz);
 		}
 		if (juego == false) {
-			System.out.println("Muy bien ya ganaste simon sobres zas eres bueno noo");
+			
+			if (turno == "J1") {
+				System.out.println("Ha ganado: J2 simon sobres zas eres bueno noo");
+			}else {
+				System.out.println("Ha ganado: J1 simon sobres zas eres bueno noo");
+			}
+			
+			
+			
 		} else if (juego == true && checkfull(matriz) == true) {
 			System.out.println("Mira pues... nadie gano que malos son");
 		}
