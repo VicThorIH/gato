@@ -17,7 +17,9 @@ public class Gato {
 
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
+			
 			if (turno == "J2") {
+
 				if(IA(matriz)) {
 					turno = "J1";
 				}else{
@@ -26,6 +28,7 @@ public class Gato {
 					turno = Reemplazar_Gato(x, matriz, turno);
 				}
 				
+
 				
 			} else {
 
@@ -271,6 +274,7 @@ public class Gato {
 
 		default:
 			System.out.println("Escoje un n�mero v�lido");
+			
 			return t;
 
 		}
@@ -294,5 +298,7 @@ public class Gato {
 		System.out.println(" " + m[6] + " | " + m[7] + " | " + m[8]);
 		System.out.println();
 	}
+	
+	
 
 }
