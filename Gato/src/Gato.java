@@ -6,8 +6,6 @@ public class Gato {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-
-
 		String[] matriz = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 		int[][] convi = { {0,1,2} , {3,4,5} , {6,7,8} , {0,3,6}, {1,4,7}, {2,5,8} , {0,4,8} , {2,4,6} };
 
@@ -22,11 +20,15 @@ public class Gato {
 			
 			if (turno == "J2") {
 
+				if(IA(matriz)) {
+					turno = "J1";
+				}else {
 					Random pcRand = new Random();
 					int x = pcRand.nextInt(10) + 1;
 					turno = Reemplazar_Gato(x, matriz, turno);
+				}
+				
 
-					
 				
 			} else {
 
@@ -34,7 +36,7 @@ public class Gato {
 				turno = Reemplazar_Gato(numero, matriz, turno);
 
 			}
-
+			
 			juego = ganador(juego, matriz);
 		}
 		if (juego == false) {
@@ -52,13 +54,54 @@ public class Gato {
 		Imprimir_Gato(matriz);
 
 	}
-
-
-	public static void IAPocoInteligente() {
-		
-	}
 	
-
+	public static boolean IA(String[] m) {
+		int cont = 0;
+		boolean flag = false;
+		for(int j=0;j<=2;j++) {
+			if(m[j]== "x") {
+				cont++;
+				System.out.println(cont);
+			}
+		}
+		if(cont == 2) {
+			for(int j=0;j<=2;j++) {
+				if(m[j]!="x") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		cont = 0;
+		for(int j=3;j<=5;j++) {
+			if(m[j]== "x") {
+				cont++;
+			}
+		}
+		if(cont == 2) {
+			for(int j=3;j<=5;j++) {
+				if(m[j]!="x") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		cont = 0;
+		for(int j=6;j<=8;j++) {
+			if(m[j]== "x") {
+				cont++;
+			}
+		}
+		if(cont == 2) {
+			for(int j=6;j<=8;j++) {
+				if(m[j]!="x") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		return flag;
+	}
 
 
 	public static boolean ganador(boolean flag, String[] matriz) {
