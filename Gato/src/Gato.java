@@ -58,10 +58,10 @@ public class Gato {
 	public static boolean IA(String[] m) {
 		int cont = 0;
 		boolean flag = false;
+		//linea 1
 		for(int j=0;j<=2;j++) {
 			if(m[j]== "x") {
 				cont++;
-				System.out.println(cont);
 			}
 		}
 		if(cont == 2) {
@@ -73,6 +73,7 @@ public class Gato {
 			}
 		}
 		cont = 0;
+		//linea 2
 		for(int j=3;j<=5;j++) {
 			if(m[j]== "x") {
 				cont++;
@@ -87,6 +88,7 @@ public class Gato {
 			}
 		}
 		cont = 0;
+		//linea 3
 		for(int j=6;j<=8;j++) {
 			if(m[j]== "x") {
 				cont++;
@@ -100,6 +102,52 @@ public class Gato {
 				}
 			}
 		}
+		cont = 0;
+		//columna 1
+		for(int j=0;j<=6;j=j+3) {
+			if(m[j]== "x") {
+				cont++;
+			}
+		}
+		if(cont == 2) {
+			for(int j=0;j<=6;j=j+3) {
+				if(m[j]!="x" && m[j]!="o") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		cont = 0;
+		// columna 2
+		for(int j=1;j<=7;j=j+3) {
+			if(m[j]== "x") {
+				cont++;
+			}
+		}
+		if(cont == 2) {
+			for(int j=1;j<=7;j=j+3) {
+				if(m[j]!="x" && m[j]!="o") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		cont = 0;
+		// columna 3
+		for(int j=2;j<=8;j=j+3) {
+			if(m[j]== "x") {
+				cont++;
+			}
+		}
+		if(cont == 2) {
+			for(int j=2;j<=8;j=j+3) {
+				if(m[j]!="x" && m[j]!="o") {
+					m[j]="o";
+					flag = true;
+				}
+			}
+		}
+		cont = 0;
 		return flag;
 	}
 
