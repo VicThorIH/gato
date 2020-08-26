@@ -20,7 +20,7 @@ public class Gato {
 			if (turno == "J2") {
 				if(IA(matriz)) {
 					turno = "J1";
-				}else {
+				}else{
 					Random pcRand = new Random();
 					int x = pcRand.nextInt(10) + 1;
 					turno = Reemplazar_Gato(x, matriz, turno);
@@ -63,7 +63,7 @@ public class Gato {
 		}
 		if(cont == 2) {
 			for(int j=0;j<=2;j++) {
-				if(m[j]!="x") {
+				if(m[j]!="x" && m[j]!="o") {
 					m[j]="o";
 					flag = true;
 				}
@@ -77,7 +77,7 @@ public class Gato {
 		}
 		if(cont == 2) {
 			for(int j=3;j<=5;j++) {
-				if(m[j]!="x") {
+				if(m[j]!="x"&& m[j]!="o") {
 					m[j]="o";
 					flag = true;
 				}
@@ -91,7 +91,7 @@ public class Gato {
 		}
 		if(cont == 2) {
 			for(int j=6;j<=8;j++) {
-				if(m[j]!="x") {
+				if(m[j]!="x" && m[j]!="o") {
 					m[j]="o";
 					flag = true;
 				}
