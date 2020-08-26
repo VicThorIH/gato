@@ -53,8 +53,7 @@ public class Gato {
 		
 	}
 	
-	public static boolean ganador(boolean flag, String[][] matriz) {
-		if (matriz[0][0] == matriz[0][2] & matriz[0][0] == matriz[0][4]) {
+
 
 
 	public static boolean ganador(boolean flag, String[] matriz) {
