@@ -5,8 +5,12 @@ public class Gato {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String[][] matriz = { { "1", "|", "2", "|", "3" }, { "-", "-", "-", "-", "-" }, { "4", "|", "5", "|", "6" },
-				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
+		String[][] matriz = { 
+				{ "1", "|", "2", "|", "3" }, 
+				{ "-", "-", "-", "-", "-" }, 
+				{ "4", "|", "5", "|", "6" },
+				{ "-", "-", "-", "-", "-" }, 
+				{ "7", "|", "8", "|", "9" }};
 
 		String turno = "J1";
 		boolean juego = true;
@@ -48,12 +52,10 @@ public class Gato {
 
 	}
 
+	public static void IAPocoInteligente() {
+		
+	}
 	
-	
-	public static boolean ganador(boolean flag, String[][] matriz){
-		if(matriz[0][0] == matriz[0][2] & matriz[0][0]==matriz[0][4]) {
-
-
 	public static boolean ganador(boolean flag, String[][] matriz) {
 		if (matriz[0][0] == matriz[0][2] & matriz[0][0] == matriz[0][4]) {
 
