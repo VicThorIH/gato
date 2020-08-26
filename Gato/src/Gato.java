@@ -1,68 +1,81 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Gato {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		String[][] matriz = {{ "1", "|", "2", "|", "3" }, 
-							{ "-", "-", "-", "-", "-" }, 
-							{ "4", "|", "5", "|", "6" },
-							{ "-", "-", "-", "-", "-" }, 
-							{ "7", "|", "8", "|", "9" }};
+
+		String[][] matriz = { { "1", "|", "2", "|", "3" }, { "-", "-", "-", "-", "-" }, { "4", "|", "5", "|", "6" },
+				{ "-", "-", "-", "-", "-" }, { "7", "|", "8", "|", "9" } };
 
 		String turno = "J1";
 		boolean juego = true;
 		Scanner leer = new Scanner(System.in);
-
-		/*Imprimir_Gato(matriz);
-		turno = Reemplazar_Gato(9, matriz, turno);
-		Imprimir_Gato(matriz);
-
-		turno = Reemplazar_Gato(9, matriz, turno);
-		Imprimir_Gato(matriz);
-
-		turno = Reemplazar_Gato(7, matriz, turno);
-		Imprimir_Gato(matriz); */
-
-		/* aqui empieso yo mija*/
-		while(juego == true) {
+		
+		while (juego == true && checkfull(matriz) == false) {
+			
 			System.out.println("Es tu turno " + turno + " Elige un numero:");
 			Imprimir_Gato(matriz);
-			int numero = leer.nextInt();
-			turno = Reemplazar_Gato(numero, matriz, turno);
+			if (turno == "J2") {
+				Random pcRand = new Random();
+				int x = pcRand.nextInt(10) + 1;
+				turno = Reemplazar_Gato(x, matriz, turno);
+			}else {
+				
+				int numero = leer.nextInt();
+				turno = Reemplazar_Gato(numero, matriz, turno);
+				
+			}
+			
+			
 			juego = ganador(juego, matriz);
 		}
-		System.out.println("Muy bien ya ganaste simon sobres zas");
+		if (juego == false) {
+			
+			if (turno == "J1") {
+				System.out.println("Ha ganado: J2 simon sobres zas eres bueno noo");
+			}else {
+				System.out.println("Ha ganado: J1 simon sobres zas eres bueno noo");
+			}
+			
+			
+			
+		} else if (juego == true && checkfull(matriz) == true) {
+			System.out.println("Mira pues... nadie gano que malos son");
+		}
+
 		Imprimir_Gato(matriz);
-		
-		
-		
-		
+
 	}
+
 	
 	
 	public static boolean ganador(boolean flag, String[][] matriz){
 		if(matriz[0][0] == matriz[0][2] & matriz[0][0]==matriz[0][4]) {
+
+
+	public static boolean ganador(boolean flag, String[][] matriz) {
+		if (matriz[0][0] == matriz[0][2] & matriz[0][0] == matriz[0][4]) {
+
 			flag = false;
-		}else if(matriz[2][0] == matriz[2][2] & matriz[2][0]==matriz[2][4]){
+		} else if (matriz[2][0] == matriz[2][2] & matriz[2][0] == matriz[2][4]) {
 			flag = false;
-		}else if(matriz[4][0] == matriz[4][2] & matriz[4][0]==matriz[4][4]){
+		} else if (matriz[4][0] == matriz[4][2] & matriz[4][0] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][0] == matriz[2][0] & matriz[0][0]==matriz[4][0]){
+		} else if (matriz[0][0] == matriz[2][0] & matriz[0][0] == matriz[4][0]) {
 			flag = false;
-		}else if(matriz[0][2] == matriz[2][2] & matriz[0][2]==matriz[4][2]){
+		} else if (matriz[0][2] == matriz[2][2] & matriz[0][2] == matriz[4][2]) {
 			flag = false;
-		}else if(matriz[0][4] == matriz[2][4] & matriz[0][4]==matriz[4][4]){
+		} else if (matriz[0][4] == matriz[2][4] & matriz[0][4] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][0] == matriz[2][2] & matriz[0][0]==matriz[4][4]){
+		} else if (matriz[0][0] == matriz[2][2] & matriz[0][0] == matriz[4][4]) {
 			flag = false;
-		}else if(matriz[0][4] == matriz[2][2] & matriz[0][4]==matriz[4][0]){
+		} else if (matriz[0][4] == matriz[2][2] & matriz[0][4] == matriz[4][0]) {
 			flag = false;
 		}
 		return flag;
 	}
-	
+
 	public static String Reemplazar_Gato(int n, String[][] m, String t) {
 
 		switch (n) {
@@ -213,6 +226,16 @@ public class Gato {
 			System.out.println("Escoje un n�mero v�lido");
 			return t;
 
+		}
+	}
+
+	public static boolean checkfull(String[][] matriz) {
+		if (matriz[0][0] != "1" && matriz[0][2] != "2" && matriz[0][4] != "3" && matriz[2][0] != "4"
+				&& matriz[2][2] != "5" && matriz[2][4] != "6" && matriz[4][0] != "7" && matriz[4][2] != "8"
+				&& matriz[4][4] != "9") {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
