@@ -6,6 +6,13 @@ public class Gato {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		String[][] matriz = { 
+				{ "1", "|", "2", "|", "3" }, 
+				{ "-", "-", "-", "-", "-" }, 
+				{ "4", "|", "5", "|", "6" },
+				{ "-", "-", "-", "-", "-" }, 
+				{ "7", "|", "8", "|", "9" }};
+
 		String[] matriz = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 		int[][] conbi = { {0,1,2} , {3,4,5} , {6,7,8} , {0,3,6}, {1,4,7}, {2,5,8} , {0,4,8} , {2,4,6} };
 
@@ -46,8 +53,18 @@ public class Gato {
 
 	}
 
+
+	public static void IAPocoInteligente() {
+		
+	}
+	
+	public static boolean ganador(boolean flag, String[][] matriz) {
+		if (matriz[0][0] == matriz[0][2] & matriz[0][0] == matriz[0][4]) {
+
+
 	public static boolean ganador(boolean flag, String[] matriz) {
 		if (matriz[0] == matriz[1] & matriz[2] == matriz[0]) {
+
 			flag = false;
 		} else if (matriz[3] == matriz[4] & matriz[5] == matriz[3]) {
 			flag = false;
